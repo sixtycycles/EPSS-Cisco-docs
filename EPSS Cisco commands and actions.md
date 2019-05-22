@@ -13,16 +13,16 @@ The management IP's and passwords for these devices are stored in lastpass as se
 
 ### If you are in the closet ###
 
-If you are in the closet and want to use the console cable to administer the switch, you will need to run a command to pipe the serial output to your terminal emulator. on a mac, use GNU `screen` followed by the location of your usb port, and 9600 (the baud rate you will be reading).
+If you are in the closet and want to use the console cable to administer the switch, you will need to run a command to pipe the serial output to your terminal emulator. On a mac, use GNU `screen` followed by the location of your usb port, and 9600 (the baud rate you will be reading).
 
-to find your usb ports on a mac, see [this article](https://stackoverflow.com/questions/12254378/how-to-find-the-serial-port-number-on-mac-os-x#12260359)
-your final command should be something like this:
+To find your usb ports on a mac, see [this article](https://stackoverflow.com/questions/12254378/how-to-find-the-serial-port-number-on-mac-os-x#12260359)
+Your final command should be something like this:
 `screen /dev/tty.usbserial-A6004byf 9600`
 and hit enter a few times.  You should be asked for a password.
 
 ### If you are remote ###
 
-if you are on campus, but don't have time/don't feel like/don't want to go to a network closet, you can telnet into most of the switches Via their management IP. For security reasons this guide will not offer more information on this topic, but rod can provide the credentials and IP's.
+If you are on campus, but don't have time/don't feel like/don't want to go to a network closet, you can telnet into most of the switches Via their management IP. For security reasons this guide will not offer more information on this topic, but Rod can provide the credentials and IP's.
 
 
 ## What is going on with X? ##
