@@ -64,29 +64,35 @@ which should change the prompt to `(config-int)` letting you know you are editin
 
 These commands remove the applied ACL from the interface, and then delete the ACL from the router memory.
 #### DO NOT DO THIS WITHOUT FIRST HAVING A LOCAL COPY OF THE ACL SAVED ####
-this removes the existing ACL.
 ```
 no ip access-group 102 out
 no access-list 102
 ```
-now the prompt should say `(config)` instead of `(config-if)`
+Now the prompt should say `(config)` instead of `(config-if)`
 
-now you can paste your ACL rules from the text file to the terminal, watching for errors. if all goes well, re enter the interface by typing:
+Now you can paste your ACL rules from the text file to the terminal, watching for errors. if all goes well, re enter the interface by typing:
 ```
 int vlan 65
 ip access-group 102 out
-exit
-# now back in (config)
-exit
-#write changes:
-wr
-#leave!
-qu
 ```
-You DID IT!
-
-
-
-
-also:
-show ip interface | include line protocol|access list
+Then type
+```
+exit
+```
+To leave the interface, and then 
+```
+exit
+```
+Again to exit config mode. 
+Now you need to write changes to memory with:
+```
+wr
+```
+And now you can exit enabled mode with
+```
+disable
+```
+Now make sure everything looks good with:
+``` show access-list 102 ```
+where `102` can be the number of whatever list you are editing. 
+If it all looks good: You DID IT! Awesome! 
