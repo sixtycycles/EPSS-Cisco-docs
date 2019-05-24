@@ -48,20 +48,26 @@ I copy these to a text file for a backup, and also to edit rules somewhere that 
 
 after making the updates and saving a copy of the original, (in case something strange goes very wrong...) I'm ready to replace the old ACL with the new one.
 
-from enabled mode:
+from enabled mode enter:
+
+`conf t`
+
+now you are in config mode, using the default value 'terminal' (the t is short for this)
+
+Once you have done that the prompt should change to `(config)` 
+
+Now you can select interface to edit, in this case, vlan 65
+
+`int vlan65`
+
+which should change the prompt to `(config-int)` letting you know you are editing a specific interface. 
+
+These commands remove the applied ACL from the interface, and then delete the ACL from the router memory.
+#### DO NOT DO THIS WITHOUT FIRST HAVING A LOCAL COPY OF THE ACL SAVED ####
+this removes the existing ACL.
 ```
-conf t
-
-# select interface to edit, in this case, vlan 65
-
-int vlan65
-
-# this removes the existing ACL.
-
 no ip access-group 102 out
 no access-list 102
-
- exit
 ```
 now the prompt should say `(config)` instead of `(config-if)`
 
