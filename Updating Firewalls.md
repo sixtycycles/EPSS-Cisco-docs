@@ -1,13 +1,13 @@
 # How to do stuff with ACL's on the core router #
 
+Each Vlan has 2 ACLS, an one inbound and one outbound.
 
-First off, each Vlan has 2 ACLS, an inbound and an outbound.
-
-The best explanation I have is that the outbound rules apply to traffic leaving the router and entering the Vlan and inbound rules apply to traffic entering (going IN) the router from the Vlan.
+This refers to the direction of traffic from the router's perspective.  So, the outbound rules apply to traffic leaving the router and entering the Vlan and inbound rules apply to traffic entering (going IN) the router from the Vlan.
 
 So for my Vlan 65 (epss main vlan), my ACL's are 102 (outbound) and 103 (inbound)
 
 You can find this information by using the command: `show ip interface | include line protocol | access list` which will show you what ACL's are on what VLANs.
+`show ip int` is the shorthand for the first part of this command, and will dump a LOT of information on you, so i use the following pipes to limit the output
 
 My result is:
 ```
@@ -18,9 +18,15 @@ Vlan65 is up, line protocol is up
 ...
   ```
 
-*** This command is also very useful to see if your attempt to update the ACL has been successful. ***
+*** This command is also very useful to see if your attempt to re-apply the ACL after an update the ACL has been successful. ***
 
-To obtain a copy of the ACL as it exists on the interface:
+### To obtain a copy of the ACL as it exists on the interface: ###
+* Enter enabled mode
+* Then: `sho run | begin list 102` to see the running configuration starting at the ACL 102. 
+  * Probably, you should copy this to a text editor before you do anything else. 
+  * Another useful tool is to say ` sho access-list 102` which will show you how many times a particular rule is "hit" on the ACL. The caveat, is that this command does not display remarks, whereas ` sho run` does. 
+
+
 ```
 telnet x.x.x.x
 
