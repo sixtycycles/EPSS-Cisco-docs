@@ -6,7 +6,7 @@ Many times, we are asked by IT services to look into a problem host, either for 
 
 Because IP's move around in our subnets thanks to DHCP, we need to get the mac address of the problem host. This action is done on the * core router *
 
-## Get the mac address:##
+## Get the mac address: ##
 
 Once we are remoted into the router, we will use the ARP tables to get the hardware address of the problem host. We can print the entire arp table with `show arp` but that is likely not useful for us, because it has EVERYTHING In there (very chatty!).
 
