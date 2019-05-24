@@ -5,7 +5,7 @@ First off, each Vlan has 2 ACLS, an inbound and an outbound.
 
 The best explanation I have is that the outbound rules apply to traffic leaving the router and entering the Vlan and inbound rules apply to traffic entering (going IN) the router from the Vlan.
 
-So for my Vlan 65, (128.97.31.0/24 and 169.232.144.0/24 subnets) my ACL's are 102 (outbound) and 103 (inbound)
+So for my Vlan 65 (epss main vlan), my ACL's are 102 (outbound) and 103 (inbound)
 
 You can find this information by using the command: `show ip interface | include line protocol | access list` which will show you what ACL's are on what VLANs.
 
