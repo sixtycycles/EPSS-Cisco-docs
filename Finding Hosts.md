@@ -13,9 +13,7 @@ Once we are remoted into the router, we will use the ARP tables to get the hardw
 Instead, we can pipe the output to another command `include` (kinda like a primitive `grep`). Let's say the problem ip was `128.97.31.133`.
 
 `show arp | include 133` will work, but will show all ips with 133 ANYWHERE in them, so to narrow it down, use:
-`show arp | include 31\.133`
-
-Where the period needs to be 'escaped' with the slash to be properly read.
+`show arp | include 31\.133` where the `\` is to escape the period in order to be properly read/parsed.
 
 Another example would be for 169.232.144.244:
 `show arp | include 144\.244` which should return something like this:
