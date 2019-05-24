@@ -81,7 +81,7 @@ Port  Name                 Status     Vlan       Duplex Speed       Type
 
 Now we know what port your problem host is on! You can either read the name value, if we have set one, or you will have to trace that cable back to the patch-bay in the closet to find the location of the problem host.
 
-    If you do have to trace it back ** please add a name to the port ** in question, something like `geology_4687_c_03` following the format: building_name/room_number/patch_panel/port_number
+If you do have to trace it back ** please add a name to the port ** in question, something like `geology_4687_c_03` following the format: building_name/room_number/patch_panel/port_number
 
 * You can use the command (from enabled mode) `set port name {module_number}/{port_number} {name_value}`
 * For example: `set port name 5/9 geology_4687_c_03` for port c/03 in geology 4687 (my office)
