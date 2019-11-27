@@ -1,10 +1,8 @@
 # Locating a problem host on the network. #
 
-** NOTE: This should be less important once we label everything this summer! **
+Many times, we are asked by IT services to look into a problem host, either for a virus, or some other problem, like a needed update, or exposed ports. To find these machines, we are given an IP and a time of detection. However, if the IP is in the DHCP range its both good and bad. We may need to look at the log server to get a copy of the logs from that time to get at the mac address of the host, because the host on the IP at this time may be completely different. 
 
-Many times, we are asked by IT services to look into a problem host, either for a virus, or some other problem, like a needed update, or exposed ports. To find these machines, we are given an IP and a time of detection. However, if the IP is in the DHCP range its both good and bad. We may need to talk to Jason to get a copy of the logs from that time to get at the mac address of the host, because the host on the IP at this time may be completely different. This should be more straightforward after we move DHCP back to our department.
-
-Because IP's move around in our subnets thanks to DHCP, we need to get the mac address of the problem host. This action is done on the * core router *
+Because IP's move around in our subnets thanks to DHCP, we need to get the mac address of the problem host. This action is done on the * core router * 
 
 ## Get the mac address: ##
 
